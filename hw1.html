@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>hw1</title>
+</head>
+<body>
+   <script>
+
+const rnd_list = []
+for (let i = 0; i < 10; i++) {
+  let randomNum = Math.floor(Math.random() * 7) + 1;
+ rnd_list.push(randomNum);
+}
+
+function print_number(number) {
+ document.write(`<br>${number}</br>`);
+}
+rnd_list.forEach (print_number)
+//קיצור:
+// rnd_list.forEach(number => {console.log(number);}
+
+let sum = 0;
+rnd_list.forEach(number => {
+  sum += number;
+});
+document.write(`Sum:",${sum} <br>`);
+
+
+let filteredList = rnd_list.filter(number => number < 5);
+document.write(`<br>"Filtered List:", ${filteredList}`);
+
+let squaredList = rnd_list.map(number => number**2);
+document.write(`<br>"Squared List:", ${squaredList}`);
+
+  let daysList = rnd_list.map(number => {let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return days[number-1];
+});
+document.write(`<br>"Days List:", ${daysList}`);
+
+
+
+   </script> 
+</body>
+</html>

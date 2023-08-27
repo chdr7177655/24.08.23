@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+   
+    <title>hw2</title>
+</head>
+<body>
+    <script>
+
+let names = [  "Emily", "Liam", "Sophia", "Noah", "Olivia", "Ethan", "Ava", "Jackson", "Isabella", "Aiden"];
+// הוספת טבלה לדף
+let table = document.createElement("table");
+document.body.appendChild(table);
+
+// הוספת שורת כותרות לטבלה
+let row = table.insertRow();
+let nameHeader = row.insertCell(0);
+nameHeader.textContent = "Name";
+
+// לולאת forEach להוספת שורות עם שמות לטבלה
+names.forEach(name => {let nameRow = table.insertRow();
+    let nameCell = nameRow.insertCell(0);
+    nameCell.textContent = name;
+});
+
+// יצירת רשימה חדשה עם השמות באורך 4 אותיות ויותר
+let longNames = names.filter(name => name.length >= 4);
+document.write(`<br>${longNames}</br>`);
+// יצירת רשימה חדשה עם השמות באורך 4 אותיות ופחות
+let shortNames = names.filter(name => name.length <= 4);
+document.write(`<br>${shortNames}</br>`);
+
+// * בונוס: יצירת רשימה משוררת של השמות באמצעות forEach
+let concatenatedNames = "";
+names.forEach(name => {
+     concatenatedNames += name;
+});
+document.write(`<br>${concatenatedNames}</br>`);
+
+// יצירת רשימה חדשה עם אורכי המילים באמצעות map
+let wordLengths = names.map(name => name.length);
+document.write(`<br>${wordLengths}</br>`);
+
+// יצירת רשימה חדשה עם האות הראשונה מכל שם באמצעות map
+let firstLetters = names.map(name => name[0]);
+document.write(`<br>${firstLetters}</br>`);
+
+// יצירת רשימה חדשה עם השמות המכילים את האות E באמצעות filter
+let namesWithE = names.filter(name => name.includes("E"));
+document.write(`<br>${namesWithE}</br>`);
+  
+
+    </script>
+</body>
+</html>

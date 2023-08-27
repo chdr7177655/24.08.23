@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    <title>hw0</title>
+</head>
+<body>
+    <script>
+        let grades = [];
+        let grade = 0;
+        
+        while (grade !== -99) {
+          grade = parseInt(prompt("Enter a grade (-99 to exit):"));
+          if (grade !== -99) {
+            grades.push(grade);
+          }
+        }
+        let valid = grades.filter(grade => grade >= 0 && grade <= 100);
+        
+        let sum = 0;
+        valid.forEach(grade => sum += grade);
+        let average = sum / valid.length;
+        
+        let above = valid.filter(grade => grade > average);
+        let below = valid.filter(grade => grade < average);
+        
+        let list3 = validGrades.map(grade => (grade > average) ? 1 : 0);
+        
+        
+        console.log("Valid Grades:", valid);
+        console.log("Average:", average);
+        console.log("Above Average Grades:", above);
+        console.log("Below Average Grades:", below);
+        console.log("List3:", list3);
+        
+        
+        
+            </script>
+</body>
+</html>
